@@ -1,12 +1,8 @@
 # Wazuh SIEM Home Lab Setup (Ubuntu, Kali Linux, Filebeat)
 Author: Kellie Hucker  
 
----
-
 ## Overview
 This project documents the setup of a home cybersecurity lab focused on centralized logging, detection, and visibility using Wazuh SIEM. The lab integrates multiple systems, including Ubuntu (Wazuh server) and Kali Linux, to simulate a real-world environment where logs are collected, forwarded, and analyzed for security insights. This was my first home cybersecurity lab, built on an HP laptop using VirtualBox. The project focused not only on standing up a working SIEM pipeline, but also on troubleshooting real-world issues related to networking, log forwarding, and system integration.
-
----
 
 ## Objective
 - Build a functional SIEM lab environment  
@@ -14,8 +10,6 @@ This project documents the setup of a home cybersecurity lab focused on centrali
 - Forward logs from multiple systems  
 - Validate log ingestion and visibility  
 - Simulate detection and alert generation  
-
----
 
 ## Lab Architecture
 <img width="498" height="550" alt="Screenshot 2026-04-16 at 14 07 39" src="https://github.com/user-attachments/assets/e040b115-48f6-4730-b254-57a8fef3fffe" />
@@ -26,8 +20,6 @@ This project documents the setup of a home cybersecurity lab focused on centrali
 - Wazuh analyzes and enriches events, then indexes them into Elasticsearch  
 - Kibana enables log search, visualization, and alerting for detection and investigation  
 
----
-
 ## Key Actions Taken
 - Installed Wazuh All-in-One on Ubuntu  
 - Configured VM networking between Ubuntu and Kali Linux  
@@ -36,8 +28,6 @@ This project documents the setup of a home cybersecurity lab focused on centrali
 - Verified log ingestion into Elasticsearch/Kibana  
 - Created test alerts to validate the detection pipeline  
 - Integrated additional log sources (Zeek/Suricata)  
-
----
 
 ## Key Steps (Technical Summary)
 ### 1. Install Wazuh All-in-One (Ubuntu)
@@ -72,8 +62,6 @@ Validated log visualization and dashboard functionality.
 ### 10. Add Additional Log Sources
 Integrated Zeek and Suricata logs to expand detection visibility.
 
----
-
 ## Outcome
 - Successfully built and stabilized my first SIEM home lab  
 - Established end-to-end log pipeline from endpoint to SIEM  
@@ -81,15 +69,11 @@ Integrated Zeek and Suricata logs to expand detection visibility.
 - Gained hands-on experience with troubleshooting and system validation  
 - Created a repeatable foundation for future blue team lab expansion
 
----
-
 ## Lab Evolution
 This project was initially built on an HP laptop as my first home lab environment.
 - As the lab matured, I migrated the blue team infrastructure to a dedicated Acer system to improve performance and maintain a stable monitoring environment.
 - The HP laptop is now being repurposed to simulate red team activity, enabling a controlled setup where mock enterprise attacks can be generated and observed within the lab.
 - This separation allows for more realistic testing of detection pipelines and blue team workflows.
-
----
 
 ## Issues and Solutions
 ### 1. VM Networking Misconfiguration
@@ -103,8 +87,7 @@ This project was initially built on an HP laptop as my first home lab environmen
 #### Solution:
 - Reconfigured network adapters using Host-Only + NAT setup  
 - Verified IP addressing and subnet alignment  
-- Validated connectivity using ping and netstat  
-
+- Validated connectivity using ping and netstat
 
 ### 2. Filebeat Not Shipping Logs
 #### Issue: Filebeat service was running, but logs were not appearing in Wazuh or Elasticsearch.
@@ -132,7 +115,6 @@ This project was initially built on an HP laptop as my first home lab environmen
 - Verified time range settings  
 - Confirmed ingestion using raw index queries  
 
-
 ### 4. Kali Linux Log Source Integration
 #### Issue: Kali Linux logs were not initially forwarding correctly.
 
@@ -157,20 +139,6 @@ This project was initially built on an HP laptop as my first home lab environmen
 - Limited concurrent services  
 - Used snapshots to stabilize known-good states
 
----
+## Security Notes
+This project is intended for learning, personal security practice, and portfolio demonstration.
 
-## Skills Demonstrated
-- SIEM deployment and validation (Wazuh)  
-- Log pipeline troubleshooting (Filebeat, Elasticsearch)  
-- Network debugging (VirtualBox, VM connectivity)  
-- Detection, validation, and alert testing  
-- Root cause analysis and issue resolution  
-- Lab design and system integration
-
----
-
-## Operational Considerations
-- Ensure network connectivity between VMs  
-- Monitor Filebeat service health  
-- Validate log ingestion after configuration changes  
-- Expand log sources for better detection coverage
