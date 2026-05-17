@@ -7,6 +7,7 @@
 
 4. [Dedicated Cybersecurity IDE and Lab Workspace Setup](https://github.com/khucker3d/cyber-homelab-project-overview/blob/main/Dedicated%20Cybersecurity%20IDE%20and%20Lab%20Workspace%20Setup.md):
 
+---
 
 ## Blue Team Home Lab: *My first Home Lab*
 1. [Secure Device Decommission: BitLocker, Clean Reprovisioning (Windows 10)](https://github.com/khucker3d/cyber-homelab-project-overview/blob/main/Secure%20Device%20Decommission.md):
