@@ -1,4 +1,4 @@
-# Wazuh SIEM Home Lab Setup (Ubuntu, Kali Linux, Filebeat)
+# Blue Team Home Lab:
 Author: Kellie Hucker  
 
 ## Overview
