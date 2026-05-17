@@ -2,17 +2,16 @@
 Author: Kellie Hucker
 
 ## Overview
-This project documents the design and implementation of a dedicated cybersecurity home lab built on an Acer workstation. The lab is structured in phases, progressing from foundational setup to a fully operational blue team environment capable of logging, monitoring, and analysis.
+This project is a high-level overview of the design and implementation of a dedicated cybersecurity home lab built on my Acer workstation. The lab was structured in phases, progressing from foundational setup to a fully operational blue team enterprise environment capable of logging, monitoring, and analysis.
 
-
-## Objective
+### Objective
 - Build a structured cybersecurity home lab  
 - Establish a secure and stable host environment  
 - Deploy virtual machines for testing and simulation  
 - Implement blue team monitoring and detection tools  
 - Create a scalable environment for continued learning and experimentation  
 
-## Lab Architecture
+### Lab Architecture
                            INTERNET
                                |
                         [ Home Router ]
@@ -26,6 +25,7 @@ This project documents the design and implementation of a dedicated cybersecurit
           |         |         |         |         |
      Win10 VM   Ubuntu VM  Ubuntu VM  Kali VM   Win10 VM
       Client      Wazuh     Dashboard  Attacker   Client 2
+
 
 ## Lab Phases
 ### Phase 1: Home Cybersecurity Lab
