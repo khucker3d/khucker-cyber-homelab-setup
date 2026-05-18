@@ -10,53 +10,31 @@ Beyond deploying a functional SIEM pipeline, this project also involved troubles
 <img width="498" height="550" alt="Screenshot 2026-04-16 at 14 07 39" src="https://github.com/user-attachments/assets/e040b115-48f6-4730-b254-57a8fef3fffe" />
 
 ### Data Flow:
-- Endpoint activity on Kali Linux generates system and security logs  
-- Filebeat collects and securely ships logs to the Wazuh server over the network  
-- Wazuh analyzes and enriches events, then indexes them into Elasticsearch  
-- Kibana enables log search, visualization, and alerting for detection and investigation  
+Endpoint activity on Kali Linux generates system and security logs > Filebeat collects and securely ships logs to the Wazuh server over the network > Wazuh analyzes and enriches events, then indexes them into Elasticsearch > Kibana enables log search, visualization, and alerting for detection and investigation
 
-## Key Actions Taken:
-- Installed Wazuh All-in-One on Ubuntu  
-- Configured VM networking between Ubuntu and Kali Linux  
-- Installed and configured Filebeat  
-- Forwarded logs from Kali Linux to Wazuh  
-- Verified log ingestion into Elasticsearch/Kibana  
-- Created test alerts to validate the detection pipeline  
-- Integrated additional log sources (Zeek/Suricata)  
+## Key Actions:
+2. Configured VM networking between Ubuntu and Kali Linux
+3. Installed and configured Filebeat
+4. Forwarded logs from Kali Linux to Wazuh
+5. Verified log ingestion into Elasticsearch/Kibana
+6. Created test alerts to validate the detection pipeline
+7. Integrated additional log sources (Zeek/Suricata)  
 
 ## Setup Steps:
 *Note: I have detailed documentation on my personal Confluence site*
 1. Install Wazuh All-in-One (Ubuntu)
 Deployed Wazuh server, including Elasticsearch and Kibana components.
-
-2. Configure VM Networking
-Configured VirtualBox networking to allow communication between:
-- Ubuntu (Wazuh server)  
-- Kali Linux (log source)  
-
-3. Install and Configure Filebeat
-Installed Filebeat on Ubuntu and configured it to forward logs to Wazuh.
-
-4. Verify Filebeat Log Shipping
-Confirmed logs were being shipped to Elasticsearch/Wazuh.
-
-5. Install Kali Linux (VirtualBox)
-Deployed Kali Linux VM as a log-generating endpoint.
-
-6. Add Kali as a Log Source
-Configured log forwarding from Kali Linux to Wazuh using Filebeat.
-
-7. Validate Log Ingestion
-Verified logs from Kali were visible in Wazuh/Kibana.
-
-8. Create Test Alert
-Generated a test event to confirm detection and alerting functionality.
-
-9. Connect Filebeat to Kibana
-Validated log visualization and dashboard functionality.
-
-10. Add Additional Log Sources
-Integrated Zeek and Suricata logs to expand detection visibility.
+2. Configured VM networking between Ubuntu and Kali Linux
+  - Ubuntu (Wazuh server)  
+  - Kali Linux (log source)  
+3. Install and configure Filebeat on Ubuntu and configure it to forward logs to Wazuh.
+4. Confirmed Filebeat logs were being shipped to Elasticsearch/Wazuh.
+5. Install Kali Linux VM as a log-generating endpoint.
+6. Add Kali as a Log Source and configure log forwarding from Kali Linux to Wazuh using Filebeat.
+7. Verified logs from Kali were visible in Wazuh/Kibana.
+8. Generated a test event to confirm detection and alerting functionality.
+9. Connect Filebeat to Kibana and validate log visualization and dashboard functionality.
+10. Add additional log sources (Zeek and Suricata) to expand detection visibility.
 
 Results:
 - Successfully built and stabilized my first SIEM home lab  
@@ -64,12 +42,6 @@ Results:
 - Resolved real-world issues across networking, log shipping, and visibility  
 - Gained hands-on experience with troubleshooting and system validation  
 - Created a repeatable foundation for future blue team lab expansion
-
-## Lab Evolution
-This project was initially built on an HP laptop as my first home lab environment.
-- As the lab matured, I migrated the blue team infrastructure to a dedicated Acer system to improve performance and maintain a stable monitoring environment.
-- The HP laptop is now being repurposed to simulate red team activity, enabling a controlled setup where mock enterprise attacks can be generated and observed within the lab.
-- This separation allows for more realistic testing of detection pipelines and blue team workflows.
 
 ## Issues and Solutions
 VM Networking Misconfiguration:
@@ -122,4 +94,3 @@ Solution:
 
 ## Security Notes
 This project is intended for learning, personal security practice, and portfolio demonstration.
-
