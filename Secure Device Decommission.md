@@ -1,8 +1,6 @@
 # Secure Device Decommission: BitLocker, Clean Reprovisioning (Windows 10)
 Author: Kellie Hucker  
 
----
-
 ## Overview
 This project documents a secure, repeatable runbook for reclaiming a personally owned Windows laptop that retained legacy enterprise BitLocker encryption. Due to unknown key ownership, possible enterprise policy control, and lack of recovery access, the system could not be trusted. A full disk wipe and clean rebuild was performed to establish a trusted cybersecurity lab baseline.
 
@@ -15,18 +13,6 @@ This device was previously issued by a former employer and later transferred to 
 - Rebuild the system using trusted installation media  
 - Re-enable platform security (TPM, Secure Boot, BitLocker)  
 - Establish a clean, trusted endpoint for cybersecurity lab use  
-
-## Scope
-- Personally owned Windows laptop  
-- BitLocker enabled from prior employer  
-- Recovery key unavailable  
-
-## Success Criteria
-- All partitions removed and disk wiped  
-- Windows 11 Pro installed from trusted media  
-- TPM and Secure Boot enabled  
-- BitLocker re-enabled under personal ownership  
-- Device validated as a clean lab baseline  
 
 ## Problem Statement
 - Device retained enterprise BitLocker encryption  
@@ -41,13 +27,13 @@ This device was previously issued by a former employer and later transferred to 
 - Inability to verify system integrity  
 
 ## Actions Taken
-- Verified BitLocker and TPM state  
-- Confirmed recovery key could not be retrieved  
-- Performed a full disk wipe, removing all partitions  
-- Installed Windows 10 from trusted media  
-- Upgraded to Windows 11 Pro  
-- Re-enabled Secure Boot and TPM-backed encryption  
-- Validated system readiness for lab use  
+1. Verified BitLocker and TPM state  
+2. Confirmed recovery key could not be retrieved  
+3. Performed a full disk wipe, removing all partitions
+4. Installed Windows 10 from trusted media
+5. Upgraded to Windows 11 Pro
+6. Re-enabled Secure Boot and TPM-backed encryption
+7. Validated system readiness for lab use  
 
 ## Outcome
 - 100 percent removal of legacy enterprise controls  
@@ -73,7 +59,7 @@ This device was previously issued by a former employer and later transferred to 
 - Do not rely on "Reset this PC" in uncertain ownership scenarios  
 - Do not retain old partitions when establishing a trusted baseline  
 
-## Key Steps (Technical Summary)
+## Key Steps (Summary)
 ### 1. Validate BitLocker State
 Validated encryption status and key ownership: `manage-bde -status`
 
@@ -110,6 +96,3 @@ Booted from trusted installation media and deleted all partitions to remove all 
 ## Result
 - Delivered a clean, trusted endpoint suitable for cybersecurity lab environments.
 - Demonstrated strong risk-based decision-making in handling encrypted enterprise assets, along with practical experience in secure device decommissioning and system hardening.
-
-## Security Notes
-This project is intended for learning, personal security practice, and portfolio demonstration.
