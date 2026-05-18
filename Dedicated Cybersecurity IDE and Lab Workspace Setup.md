@@ -147,4 +147,4 @@ Created and executed a test script to confirm environment isolation and package 
  - Validate PATH and environment variables when installing tools
 
 ## Security Notes
-This project is intended for learning, personal security practice, and portfolio demonstration.
+- This project is intended for learning, personal security practice, and portfolio demonstration.
