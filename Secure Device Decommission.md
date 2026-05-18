@@ -60,39 +60,29 @@ This device was previously issued by a former employer and later transferred to 
 - Do not retain old partitions when establishing a trusted baseline  
 
 ## Key Steps (Summary)
-### 1. Validate BitLocker State
-Validated encryption status and key ownership: `manage-bde -status`
-
-### 2. Check for Enterprise Management
-Checked whether the device was still enrolled in a domain or Azure AD: `dsregcmd /status`
-
-### 3. Validate Platform Security Readiness
-Verified TPM and Secure Boot status:
-- `Get-Tpm`
-- `Confirm-SecureBootUEFI`
-
-### 4. Perform Secure Disk Wipe
-Booted from trusted installation media and deleted all partitions to remove all prior OS and enterprise artifacts.
-
-### 5. Reinstall and Harden System
-- Installed Windows 10 from trusted media
-- Upgraded to Windows 11 Pro
-- Enabled TPM and Secure Boot in BIOS
-- Applied system updates and trusted drivers
-
-### 6. Re-enable BitLocker Under Personal Ownership
-`manage-bde -on C: -usedspaceonly`
-
-### 7. Validate Trusted Baseline
-- `manage-bde -status`
-- `Get-Tpm`
-- `Confirm-SecureBootUEFI`
-
-### Confirmed:
-- BitLocker fully enabled
-- TPM ready
-- Secure Boot active
-
-## Result
+1. Validate BitLocker encryption status and key ownership: `manage-bde -status`
+2. Check whether the device was still enrolled in a domain or Azure AD: `dsregcmd /status`
+3. Verified TPM and Secure Boot status:
+  - `Get-Tpm`
+  - `Confirm-SecureBootUEFI`
+4. Perform Secure Disk Wipe by booting from trusted installation media and deleting all partitions to remove all prior OS and enterprise artifacts.
+5. Reinstall and Harden System
+  - Installed Windows 10 from trusted media
+  - Upgraded to Windows 11 Pro
+  - Enabled TPM and Secure Boot in BIOS
+  - Applied system updates and trusted drivers
+6. Re-enable BitLocker Under Personal Ownership: `manage-bde -on C: -usedspaceonly`
+7. Validate Trusted Baseline
+  - `manage-bde -status`
+  - `Get-Tpm`
+  - `Confirm-SecureBootUEFI`
+8. Confirm:
+  - BitLocker fully enabled
+  - TPM ready
+  - Secure Boot active
+**Result:**
 - Delivered a clean, trusted endpoint suitable for cybersecurity lab environments.
 - Demonstrated strong risk-based decision-making in handling encrypted enterprise assets, along with practical experience in secure device decommissioning and system hardening.
+
+## Security Notes
+- This project is intended for learning, personal security practice, and portfolio demonstration.
